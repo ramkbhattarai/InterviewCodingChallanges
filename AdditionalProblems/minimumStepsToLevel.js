@@ -106,4 +106,4 @@ function pilesOfBoxes(boxesInPiles) {
 
     return answer;
 }
-console.log(pilesOfBoxes([4, 5, 5, 2, 4])); --> 6
+// console.log(pilesOfBoxes([4, 5, 5, 2, 4])); --> 6
