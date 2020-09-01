@@ -39,31 +39,18 @@ Sample Output 1
 function jumpingOnClouds(c) {
     let dp = new Array(c.length).fill(Infinity);
     dp[0] = 0;
-    for (let index = 0; index < c.length; index++) {
-        // console.log('index='+ index);
-        // console.log('value=' + c[index]);
-        const step1 = c[index + 1] === undefined ? Infinity : c[index + 1];
-        // console.log('step1=' + step1);
-        const step2 = c[index + 2] === undefined ? Infinity : c[index + 2];
-        // console.log('step2=' + step2);
-        // console.log('dp-earler='+ dp);
-        // console.log('check=' + c[index] === 0);
+    for (let index = 0; index < c.length; index++) {   
+        const step1 = c[index + 1] === undefined ? Infinity : c[index + 1];   
+        const step2 = c[index + 2] === undefined ? Infinity : c[index + 2];  
         if(c[index] === 0){
-            if(step1 === 0){
-                
+            if(step1 === 0){    
                 dp[index + 1] = Math.min(dp[index] + 1, dp[index + 1]);
             }
             if (step2 === 0) {
                 dp[index + 2] = Math.min(dp[index] + 1, dp[index + 2]);
             }
-        }
-        // console.log('dp-later=' + dp);
-        // console.log('============')
-        
+        }   
     }
-    // console.log(dp);
     return dp[dp.length -1];
 }
-console.log(jumpingOnClouds([0, 0 ,1, 0, 0, 1 ,0])); // 4
-console.log(jumpingOnClouds([0, 0, 0, 1 ,0, 0])); // 3
 
