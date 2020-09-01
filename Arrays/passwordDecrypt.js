@@ -45,9 +45,9 @@ function swapIfNecessary(arr){
             if (!checkIfLetter(letter) && arr.includes('0')) {
                
                 let index = arr.lastIndexOf('0');
-                // console.log('before-swap=' + arr);
+          
                 arr = swap(arr, i, index);
-                // console.log('after-swap=' + arr);
+   
                 arr.splice(i, 1);
                 i--;
                 
@@ -58,7 +58,6 @@ function swapIfNecessary(arr){
         
         return arr;
     }
-// console.log(changeNumbers(['5', '1', 'a', 'P', '0', 'p', 'L', '0', 'e']))
 
 function decryptPassword(s) {
     let arr = s.split('');
@@ -67,11 +66,9 @@ function decryptPassword(s) {
    
     arr = removeStar(arr);
    
-    // console.log('before-change=' + arr)
     arr = changeNumbers(arr);
-    // console.log('after-change=' + arr)
     return arr.join('');
 
 }
 
-console.log(decryptPassword('51Pa*0Lp*0e')); //aP1pL5e
+// console.log(decryptPassword('51Pa*0Lp*0e')); //aP1pL5e
