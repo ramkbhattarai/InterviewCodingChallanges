@@ -47,21 +47,23 @@ function swap(arr, i, j) {
 function minimumSwaps(arr) {
     let count = 0;
     let i = 0;
-    while (i < arr.length){
-        
-            console.log(' before swapping arr = ' + arr); 
-            if (arr[i] !== i + 1) {
-                let index = arr.indexOf(i+1);
-                swap(arr, index, i);
-                count++;
-            } else {
-                i++;
+    while (i < arr.length - 1) {
+
+
+        if (arr[i] !== i + 1) {
+            let t = i;
+            while (arr[t] != i + 1) {
+                t++;
             }
-           console.log(' after swapping arr = '+ arr); 
-            console.log('=========================== '); 
-        
+            swap(arr, t, i);
+            count++;
+        } else {
+            i++;
+        }
+
+
     }
     return count;
 }
 
-console.log(minimumSwaps([4 ,3 ,1 ,2]));
+// console.log(minimumSwaps([4 ,3 ,1 ,2]));
