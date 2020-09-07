@@ -39,7 +39,6 @@ Sample Output 0
 3
  */
 function swap(arr, i, j) {
-    console.log('arr = '+ arr + '   i='+ i + '   j='+ j);
     let temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
@@ -47,13 +46,20 @@ function swap(arr, i, j) {
 
 function minimumSwaps(arr) {
     let count = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== i + 1) {
-            swap(arr, i, arr[arr[i] -1]);
-            count++;
-        } else {
-            i++;
-        }
+    let i = 0;
+    while (i < arr.length){
+        
+            console.log(' before swapping arr = ' + arr); 
+            if (arr[i] !== i + 1) {
+                let index = arr.indexOf(i+1);
+                swap(arr, index, i);
+                count++;
+            } else {
+                i++;
+            }
+           console.log(' after swapping arr = '+ arr); 
+            console.log('=========================== '); 
+        
     }
     return count;
 }
